@@ -1,3 +1,103 @@
 body {
   text-align: center;
 }
+
+.body-div {
+  width: 60%;
+  height: 75%;
+  margin: auto;
+  padding-top: 10%;
+  display: grid;
+}
+
+.output-div {
+  margin-bottom: 25px;
+  font-size: 2em;
+}
+
+.buttons-div {
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr) minmax(10px, auto);
+  grid-auto-rows: minmax(30px, auto);
+  gap: 10px;
+}
+
+.row-1-divide {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.row-1-multiply {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.row-1-minus {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.row-2-7 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.row-2-8 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.row-2-9 {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.row-2-plus {
+  grid-column: 4;
+  grid-row: 2 / 3;
+}
+
+.row-3-4 {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.row-3-5 {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.row-3-6 {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.row-4-1 {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.row-4-2 {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.row-4-3 {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+.row-4-equals {
+  grid-column: 4;
+  grid-row: 4 / 5;
+}
+
+.row-5-0 {
+  grid-column: 1 / 2;
+  grid-row: 5;
+}
+
+.row-5-decimal {
+  grid-column: 3;
+  grid-row: 5;
+}
