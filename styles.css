@@ -1,5 +1,11 @@
 body {
   text-align: center;
+  background: linear-gradient(to left, #00AAFF, #00FF6C);
+  font-family: sans-serif;
+}
+
+#calculationOutput {
+  font-size: 16px;
 }
 
 .body-div {
@@ -11,15 +17,32 @@ body {
 }
 
 .output-div {
-  margin-bottom: 25px;
   font-size: 2em;
+  background-color: black;
+  color: white;
+  grid-template-columns: repeat(1, auto);
+  text-align: right;
+  padding: 5px;
 }
 
 .buttons-div {
   display: grid;
-  grid-template-columns: repeat(4 , 1fr) minmax(10px, auto);
-  grid-auto-rows: minmax(30px, auto);
+  grid-template-columns: repeat(3 , auto) minmax(10px, auto);
+  grid-template-rows: minmax(30px, auto) repeat(5, 50px);
   gap: 5px;
+  align-content: center;
+}
+
+.buttons-div > button {
+  font-size: 2rem;
+  border: 1px solid grey;
+  background-color: rgba(255,255,255,.75);
+}
+
+.buttons-div > button:hover {
+  font-size: 2rem;
+  border: 1px solid grey;
+  background-color: rgba(255,255,255,.9);
 }
 
 .row-1-clear {
