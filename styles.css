@@ -3,7 +3,7 @@ body {
 }
 
 .body-div {
-  width: 60%;
+  width: 40%;
   height: 75%;
   margin: auto;
   padding-top: 10%;
@@ -19,7 +19,12 @@ body {
   display: grid;
   grid-template-columns: repeat(4 , 1fr) minmax(10px, auto);
   grid-auto-rows: minmax(30px, auto);
-  gap: 10px;
+  gap: 5px;
+}
+
+.row-1-clear {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .row-1-divide {
