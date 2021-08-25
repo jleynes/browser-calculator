@@ -20,21 +20,23 @@ calculationOutput.innerHTML = numberA.toString() + operator.toString();
 const numbers = document.querySelectorAll('.number');
 const decimal = document.querySelector('.decimal');
 const operators = document.querySelectorAll('.operator');
-const clear = document.querySelector('.clear').addEventListener('click', clearAll);
+const clear = document.querySelector('.clear');
 
+clear.addEventListener('click', clearAll);
 
 // Adds an event listener to each button to add to the number variables
 numbers.forEach(number => {
-    number.addEventListener('click', e => {
-      if (operator == "") {
-        numberA += e.target.innerText;
-        calculationOutput.innerHTML = numberA.toString()
-        console.log(numberA);
-      } else {
-        numberB += e.target.innerText;
-        console.log(numberB);
-      }
-    });
+  number.addEventListener('click', e => {
+    if (operator == "") {
+      numberA += e.target.innerText;
+      calculationOutput.innerHTML = numberA.toString();
+      console.log(numberA);
+    } else {
+      numberB += e.target.innerText;
+      calculationOutput.innerHTML = numberB.toString();
+      console.log(numberB);
+    }
+  });
 });
 
 // Adds an event listener to the operator buttons and calculates based on that
@@ -43,15 +45,17 @@ operators.forEach(operatorChoice => {
     if (e.target.id !== "equals") {
       operator = e.target.id;
 
+      calculationOutput.innerHTML = numberA.toString() + ' ' + e.target.innerHTML;
       console.log(numberA);
       console.log(operator);
+
+      // checks to see if numberB has a number attached to avoid crashes
+    } else if (e.target.id == "equals" && numberB !== "") {
+      numberTotal = operate(operator, parseFloat(numberA), parseFloat(numberB));
+      console.log(equals());
 
     } else {
-      numberTotal = operate(operator, parseInt(numberA), parseInt(numberB));
-
-      console.log(numberB);
-      console.log(numberA);
-      console.log(operator);
+      clearAll();
     }
   });
 });
@@ -70,20 +74,28 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
-  if(num2 === 0) {
+  if (num2 === 0) {
     return "Bruh no."
   } else {
     return num1 / num2;
   }
 }
 
+function equals() {
+  numberA = numberTotal;
+  numberB = "";
+
+  displayOutput.innerHTML = numberTotal.toString();
+  return numberTotal;
+}
+
 // function that calls calculation function depending on operator choice
 function operate(choice, num1, num2) {
   switch (choice) {
-    case "add":
+    case "plus":
       return add(num1, num2);
       break;
-    case "subtract":
+    case "minus":
       return subtract(num1, num2);
       break;
     case "multiply":
@@ -99,11 +111,13 @@ function operate(choice, num1, num2) {
 
 // function that resets calculator
 function clearAll() {
-  this.displayValue = "0";
+  displayValue = "0";
 
-  this.numberA = "";
-  this.numberB = "";
+  numberA = "";
+  numberB = "";
   numberTotal = "";
 
-  this.operator = undefined;
+  operator = "";
+  displayOutput.innerHTML = displayValue
+  calculationOutput.innerHTML = numberA.toString()
 }
