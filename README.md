@@ -1,5 +1,5 @@
 # calculator
-An online calculator built using HTML, CSS, and JavaScript
+An web based calculator built using HTML, CSS, and JavaScript
 
 For The Odin Project
 
