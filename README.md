@@ -11,3 +11,5 @@ For The Odin Project
 
 ## To Do
 <li> Add decimal point functionality
+<li> Round decimals to prevent overflow
+<li> Bug fixes
